@@ -6,6 +6,8 @@ D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\EntityFramework.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Microsoft.Web.Infrastructure.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.dll
+D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Ninject.dll
+D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\NLog.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.Http.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.Http.WebHost.dll
@@ -16,7 +18,10 @@ D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.Razor.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.dll
+D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\WebActivatorEx.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\WebGrease.dll
+D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Ninject.xml
+D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\NLog.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\EntityFramework.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Newtonsoft.Json.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Net.Http.Formatting.xml
@@ -27,11 +32,6 @@ D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.Razor.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Deployment.xml
 D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\System.Web.WebPages.Razor.xml
-D:\MVS_Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
 D:\MVS_Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.dll
 D:\MVS_Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.pdb
-D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\NLog.dll
-D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\NLog.xml
-D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\WebActivatorEx.dll
-D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Ninject.dll
-D:\MVS_Projects\MvcApplication1\MvcApplication1\bin\Ninject.xml
+D:\MVS_Projects\MvcApplication1\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
