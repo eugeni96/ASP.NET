@@ -13,7 +13,7 @@ namespace MVC_Lesson2.App_Start
     {
         public string Kill()
         {
-            return "BIG BADABUM!"; 
+            return "BIG BADABUM!";
         }
     }
 }
