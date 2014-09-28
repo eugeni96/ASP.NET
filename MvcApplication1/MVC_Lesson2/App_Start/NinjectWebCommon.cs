@@ -10,6 +10,8 @@ namespace MVC_Lesson2.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using LessonProject.Model;
+    using System.Configuration;
 
     public static class NinjectWebCommon 
     {
@@ -61,7 +63,8 @@ namespace MVC_Lesson2.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IWeapon>().To<Bazuka>();
-        }        
+            kernel.Bind<LessonProjectDbDataContext>().ToMethod(c => new LessonProjectDbDataContext(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));
+            kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
+        } 
     }
 }
