@@ -55,7 +55,7 @@ namespace LessonProject.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<LessonProjectDbDataContext>().ToMethod(c => new LessonProjectDbDataContext(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));
+            kernel.Bind<LessonProejctDbDataContext>().ToMethod(c => new LessonProejctDbDataContext(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
         }
     }
