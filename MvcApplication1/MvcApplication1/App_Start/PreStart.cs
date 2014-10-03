@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Lesson1.App_Start;
+﻿using Lesson1.App_Start;
 
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PreStartApp), "Start")]

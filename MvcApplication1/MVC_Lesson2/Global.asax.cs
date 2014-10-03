@@ -1,7 +1,8 @@
-﻿using System.Web.Http;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using MVC_Lesson2.Areas.Admin;
+using MVC_Lesson2.Areas.Default;
 
 namespace MVC_Lesson2
 {
@@ -12,7 +13,13 @@ namespace MVC_Lesson2
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            var adminArea = new AdminAreaRegistration();
+            var adminAreaContext = new AreaRegistrationContext(adminArea.AreaName, RouteTable.Routes);
+            adminArea.RegisterArea(adminAreaContext);
+
+            var defaultArea = new DefaultAreaRegistration();
+            var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, RouteTable.Routes);
+            defaultArea.RegisterArea(defaultAreaContext);
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
