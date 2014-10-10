@@ -34,12 +34,12 @@ namespace LessonProject.Model
             User cache = Db.Users.Where(p => p.ID == instance.ID).FirstOrDefault();
             if (cache != null)
             {
+                cache.Birthdate = instance.Birthdate;
                 cache.AvatarPath = instance.AvatarPath;
                 cache.Email = instance.Email;
                 Db.Users.Context.SubmitChanges();
                 return true;
             }
-
             return false;
         }
 

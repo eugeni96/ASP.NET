@@ -1,4 +1,6 @@
-﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Start")]
+﻿using MVC_Lesson2.Mappers;
+
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Stop")]
 
 namespace MVC_Lesson2.App_Start
@@ -46,6 +48,7 @@ namespace MVC_Lesson2.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+                kernel.Bind<IMapper>().To<CommonMapper>().InSingletonScope();
 
                 RegisterServices(kernel);
                 return kernel;

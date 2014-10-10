@@ -18,7 +18,7 @@ namespace MVC_Lesson2.Areas.Admin
                 "Admin",
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                new[] { "MVC_Lesson2.Areas.Default.Controllers" }
+                new[] { "MVC_Lesson2.Areas.Admin.Controllers" }
             );
         }
     }

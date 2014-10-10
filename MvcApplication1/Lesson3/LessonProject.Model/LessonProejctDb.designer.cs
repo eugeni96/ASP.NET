@@ -13,6 +13,11 @@ namespace LessonProject.Model
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
+	using System.Data;
+	using System.Collections.Generic;
+	using System.Reflection;
+	using System.Linq;
+	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
 	
@@ -443,6 +448,8 @@ namespace LessonProject.Model
 		
 		private string _AvatarPath;
 		
+		private System.DateTime _Birthdate;
+		
 		private EntitySet<UserRole> _UserRoles;
 		
     #region Extensibility Method Definitions
@@ -465,6 +472,8 @@ namespace LessonProject.Model
     partial void OnLastVisitDateChanged();
     partial void OnAvatarPathChanging(string value);
     partial void OnAvatarPathChanged();
+    partial void OnBirthdateChanging(System.DateTime value);
+    partial void OnBirthdateChanged();
     #endregion
 		
 		public User()
@@ -473,7 +482,7 @@ namespace LessonProject.Model
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int ID
 		{
 			get
@@ -629,6 +638,26 @@ namespace LessonProject.Model
 					this._AvatarPath = value;
 					this.SendPropertyChanged("AvatarPath");
 					this.OnAvatarPathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthdate", DbType="DateTime NOT NULL")]
+		public System.DateTime Birthdate
+		{
+			get
+			{
+				return this._Birthdate;
+			}
+			set
+			{
+				if ((this._Birthdate != value))
+				{
+					this.OnBirthdateChanging(value);
+					this.SendPropertyChanging();
+					this._Birthdate = value;
+					this.SendPropertyChanged("Birthdate");
+					this.OnBirthdateChanged();
 				}
 			}
 		}

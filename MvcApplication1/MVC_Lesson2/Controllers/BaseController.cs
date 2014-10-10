@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LessonProject.Model;
+using MVC_Lesson2.Mappers;
 using Ninject;
 
 namespace MVC_Lesson2.Controllers
@@ -12,5 +13,8 @@ namespace MVC_Lesson2.Controllers
     {
         [Inject]
         public IRepository Repository { get; set; }
+
+        [Inject]
+        public IMapper ModelMapper { get; set; }
     }
 }
