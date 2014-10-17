@@ -26,6 +26,10 @@ namespace LessonProject.Model
 
         bool RemoveUser(int idUser);
 
+        User Login(string email, string password);
+
+        User GetUser(string email);
+
         #endregion
 
 

@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using System.Linq;
+using Ninject;
 
 namespace LessonProject.Model
 {
@@ -6,6 +7,7 @@ namespace LessonProject.Model
     {
         [Inject]
         public LessonProejctDbDataContext Db { get; set; }
+
 
     }
 }
