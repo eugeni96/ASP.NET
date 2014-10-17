@@ -1,4 +1,5 @@
-﻿using MVC_Lesson2.Mappers;
+﻿using MVC_Lesson2.Global.Auth;
+using MVC_Lesson2.Mappers;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Stop")]
@@ -68,6 +69,7 @@ namespace MVC_Lesson2.App_Start
         {
             kernel.Bind<LessonProejctDbDataContext>().ToMethod(c => new LessonProejctDbDataContext(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
+            kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
         } 
     }
 }
