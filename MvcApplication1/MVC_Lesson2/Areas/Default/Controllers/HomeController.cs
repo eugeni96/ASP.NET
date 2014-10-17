@@ -22,5 +22,9 @@ namespace MVC_Lesson2.Areas.Default.Controllers
 
             return View();
         }
+        public ActionResult UserLogin()
+        {
+            return View(CurrentUser);
+        }
     }
 }
