@@ -42,13 +42,5 @@ namespace MVC_Lesson2.Global.Auth
                 User = repository.GetUser(email);
             }
         }
-
-        [Inject]
-        public IAuthentication Auth { get; set; }
-
-        public User CurrentUser
-        {
-            get { return ((IUserProvider) Auth.CurrentUser.Identity).User; }
-        }
     }
 }
