@@ -49,6 +49,7 @@
                 Birth date
             </label>
             <div class="controls">
+                @Html.ValidationMessage("BirthDay")
                 @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
                 @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList)
                 @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList)

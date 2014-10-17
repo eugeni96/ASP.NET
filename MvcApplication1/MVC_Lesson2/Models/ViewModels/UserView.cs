@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,7 +10,7 @@ namespace MVC_Lesson2.Models.ViewModels
 {
     public class UserView
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Введите email")]
         public string Email { get; set; }
@@ -34,13 +35,19 @@ namespace MVC_Lesson2.Models.ViewModels
         {
             get
             {
+                yield return new SelectListItem
+                {
+                    Value = "",
+                    Text = "",
+                    Selected = true
+                };
                 for (int i = 1; i < 32; i++)
                 {
                     yield return new SelectListItem
                     {
                         Value = i.ToString(),
                         Text = i.ToString(),
-                        Selected = BirthdateDay == i
+                        Selected = false
                     };
                 }
             }
@@ -50,13 +57,19 @@ namespace MVC_Lesson2.Models.ViewModels
         {
             get
             {
+                yield return new SelectListItem
+                {
+                    Value = "",
+                    Text = "",
+                    Selected = true
+                };
                 for (int i = 1; i < 13; i++)
                 {
                     yield return new SelectListItem
                     {
                         Value = i.ToString(),
                         Text = new DateTime(2000, i, 1).ToString("MMMM"),
-                        Selected = BirthdateMonth == i
+                        Selected = false
                     };
                 }
             }
@@ -66,13 +79,20 @@ namespace MVC_Lesson2.Models.ViewModels
         {
             get
             {
+                yield return new SelectListItem
+                {
+                    Value = "",
+                    Text = "",
+                    Selected = true
+                };
                 for (int i = 1910; i < DateTime.Now.Year; i++)
                 {
                     yield return new SelectListItem
                     {
                         Value = i.ToString(),
                         Text = i.ToString(),
-                        Selected = BirthdateYear == i
+                        Selected = false
+
                     };
                 }
             }

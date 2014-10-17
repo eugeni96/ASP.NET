@@ -37,7 +37,10 @@ namespace MVC_Lesson2.Areas.Default.Controllers
             {
                 ModelState.AddModelError("Email", "Пользователь с таким email уже зарегистрирован");
             }
-
+            if (userView.BirthdateDay == 0 || userView.BirthdateMonth == 0 || userView.BirthdateYear == 0)
+            {
+                ModelState.AddModelError("BirthDay", "Дата рождения не указана");
+            }
             if (ModelState.IsValid)
             {
                 var user = (User)ModelMapper.Map(userView, typeof(UserView), typeof(User));
