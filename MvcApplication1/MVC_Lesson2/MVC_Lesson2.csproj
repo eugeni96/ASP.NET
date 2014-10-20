@@ -151,6 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Default\Controllers\LoginController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
@@ -167,6 +168,7 @@
     <Compile Include="Global\Auth\UserProvider.cs" />
     <Compile Include="Mappers\CommonMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
+    <Compile Include="Models\ViewModels\LoginView.cs" />
     <Compile Include="Models\ViewModels\UserView.cs" />
     <Compile Include="Models\ViewModels\ValidEmailAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -236,6 +238,7 @@
     <Content Include="Areas\Default\Views\Home\Index.cshtml" />
     <Content Include="Areas\Default\Views\User\Index.cshtml" />
     <Content Include="Areas\Default\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Login\Index.cshtml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
