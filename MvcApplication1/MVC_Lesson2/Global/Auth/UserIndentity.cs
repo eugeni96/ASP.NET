@@ -42,6 +42,5 @@ namespace MVC_Lesson2.Global.Auth
                 User = repository.GetUser(email);
             }
         }
-
     }
 }

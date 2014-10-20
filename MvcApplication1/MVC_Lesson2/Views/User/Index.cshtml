@@ -1,0 +1,25 @@
+﻿@model IList<LessonProject.Model.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Roles</h2>
+
+<p>
+    @foreach (var user in Model)
+    {
+        <div class="item">
+            <span class="id">
+                @user.ID
+            </span>
+            <span class="name">
+                @user.AddedDate
+            </span>
+            <span class="Code">
+                @user.Email
+            </span>
+        </div>
+    }
+</p>

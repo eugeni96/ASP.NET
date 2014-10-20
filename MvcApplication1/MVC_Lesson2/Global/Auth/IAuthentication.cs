@@ -11,7 +11,7 @@ namespace MVC_Lesson2.Global.Auth
     {
         HttpContext HttpContext { get; set; }
 
-        User Login(string userName, string Password, bool isPersistent);
+        User Login(string login, string password, bool isPersistent);
 
         User Login(string login);
 
