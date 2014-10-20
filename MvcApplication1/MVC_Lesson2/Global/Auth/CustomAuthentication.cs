@@ -22,9 +22,9 @@ namespace MVC_Lesson2.Global.Auth
 
         #region IAuthentication Members
 
-        public User Login(string userName, string password, bool isPersistent)
+        public User Login(string userName, string Password, bool isPersistent)
         {
-            User retUser = Repository.Login(userName, password);
+            User retUser = Repository.Login(userName, Password);
             if (retUser != null)
             {
                 CreateCookie(userName, isPersistent);
@@ -35,12 +35,10 @@ namespace MVC_Lesson2.Global.Auth
         public User Login(string userName)
         {
             User retUser = Repository.Users.FirstOrDefault(p => string.Compare(p.Email, userName, true) == 0);
-            
             if (retUser != null)
             {
                 CreateCookie(userName);
             }
-
             return retUser;
         }
 
@@ -59,13 +57,12 @@ namespace MVC_Lesson2.Global.Auth
             var encTicket = FormsAuthentication.Encrypt(ticket);
 
             // Create the cookie.
-            var authCookie = new HttpCookie(cookieName)
+            var AuthCookie = new HttpCookie(cookieName)
             {
                 Value = encTicket,
                 Expires = DateTime.Now.Add(FormsAuthentication.Timeout)
             };
-
-            HttpContext.Current.Response.Cookies.Set(authCookie);
+            HttpContext.Response.Cookies.Set(AuthCookie);
         }
 
         public void LogOut()
@@ -88,7 +85,6 @@ namespace MVC_Lesson2.Global.Auth
                     try
                     {
                         HttpCookie authCookie = HttpContext.Request.Cookies.Get(cookieName);
-                        
                         if (authCookie != null && !string.IsNullOrEmpty(authCookie.Value))
                         {
                             var ticket = FormsAuthentication.Decrypt(authCookie.Value);
