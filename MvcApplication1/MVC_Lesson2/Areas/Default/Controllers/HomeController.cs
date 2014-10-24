@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace MVC_Lesson2.Areas.Default.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : DefaultController
     {
         public ActionResult Index()
         {
@@ -18,7 +18,7 @@ namespace MVC_Lesson2.Areas.Default.Controllers
                 Value = DateTime.Now.ToString("dd.MM.yyyy"),
                 Expires = DateTime.Now.AddMinutes(10),
             }; 
-             Response.SetCookie(cookie);
+            Response.SetCookie(cookie);
 
             return View();
         }

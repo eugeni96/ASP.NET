@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVC_Lesson2.Controllers;
 using MVC_Lesson2.Models.ViewModels;
+using MVC_Lesson2.Controllers;
 
 namespace MVC_Lesson2.Areas.Default.Controllers
 {
-    public class LoginController : BaseController
+    public class LoginController : DefaultController
     {
         [HttpGet]
         public ActionResult Index()
@@ -37,4 +37,5 @@ namespace MVC_Lesson2.Areas.Default.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
+
 }
