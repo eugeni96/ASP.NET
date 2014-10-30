@@ -17,14 +17,13 @@ namespace MVC_Lesson2
                         "~/Scripts/bootstrap*"));
 
             bundles.Add(new StyleBundle("~/Content/css")
-                    .Include("~/Content/site.css")
-                    .Include("~/Content/bootstrap-theme.css")
-                    .Include("~/Content/bootstrap-theme.min.css")
-                    .Include("~/Content/bootstrap.min.css")
-                    .Include("~/Content/bootstrap.css"));
+                    .Include("~/Content/bootstrap*"));
 
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
                        "~/Scripts/common.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css/jqueryui")
+                    .Include("~/Content/jquery-ui*"));
         }
     }
 }
