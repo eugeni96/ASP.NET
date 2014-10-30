@@ -1,6 +1,4 @@
-﻿/* Styles for validation helpers
------------------------------------------------------------*/
-.field-validation-error {
+﻿.field-validation-error {
     color: #f00;
 }
 
@@ -20,4 +18,17 @@
 
 .validation-summary-valid {
     display: none;
+}
+
+.select-day
+{
+    width : 50px;
+}
+.select-month
+{
+    width : 90px;
+}
+.select-year
+{
+    width : 70px;
 }

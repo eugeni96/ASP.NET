@@ -1,4 +1,15 @@
 ﻿@model MVC_Lesson2.Models.ViewModels.UserView
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts {
+    @Scripts.Render("/Scripts/default/user-register.js")
+}
+
+<h2>Register</h2>
+
 @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
@@ -50,9 +61,9 @@
             </label>
             <div class="controls">
                 @Html.ValidationMessage("BirthDay")
-                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList)
-                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList)
-                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList)
+                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList, new { @class = "select-day" })
+                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList, new { @class = "select-month" })
+                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList, new { @class = "select-year" })
             </div>
         </div>
         
