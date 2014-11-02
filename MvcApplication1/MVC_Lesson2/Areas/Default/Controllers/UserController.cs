@@ -2,10 +2,9 @@
 using LessonProject.Model;
 using MVC_Lesson2.Controllers;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using MVC_Lesson2.Models.Info;
 using MVC_Lesson2.Models.ViewModels;
 using MVC_Lesson2.Tools;
 
@@ -15,7 +14,7 @@ namespace MVC_Lesson2.Areas.Default.Controllers
     {
         public ActionResult Index(int page = 1)
         {
-            var data = new PageableData<User>(Repository.Users, page, 30);
+            var data = new PageableData<User>(Repository.Users, page, 3);
             return View(data);
         }
         [HttpGet]
