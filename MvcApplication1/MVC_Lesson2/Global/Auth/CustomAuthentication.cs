@@ -70,7 +70,7 @@ namespace MVC_Lesson2.Global.Auth
 
         public void LogOut()
         {
-            var httpCookie = HttpContext.Response.Cookies[cookieName];
+            var httpCookie = HttpContext.Current.Response.Cookies[cookieName];
             if (httpCookie != null)
             {
                 httpCookie.Value = string.Empty;
@@ -87,7 +87,7 @@ namespace MVC_Lesson2.Global.Auth
                 {
                     try
                     {
-                        HttpCookie authCookie = HttpContext.Request.Cookies.Get(cookieName);
+                        HttpCookie authCookie = HttpContext.Current.Request.Cookies.Get(cookieName);
                         
                         if (authCookie != null && !string.IsNullOrEmpty(authCookie.Value))
                         {
