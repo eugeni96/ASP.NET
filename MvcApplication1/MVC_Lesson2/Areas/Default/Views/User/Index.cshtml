@@ -1,4 +1,4 @@
-﻿@model IList<LessonProject.Model.User>
+﻿@model MVC_Lesson2.Models.Info.PageableData<LessonProject.Model.User>
 
 @{
     ViewBag.Title = "Users";
@@ -8,17 +8,17 @@
 <h2>Users</h2>
 
 <p>
-    @foreach (var user in Model)
+    @foreach (var user in Model.List)
     {
         <div class="item">
             <span class="id">
                 @user.ID
             </span>
-            <span class="name">
-                @user.AddedDate
-            </span>
-            <span class="Code">
+            <span class="email">
                 @user.Email
+            </span>
+            <span class="activateDate">
+                @user.AddedDate
             </span>
         </div>
     }

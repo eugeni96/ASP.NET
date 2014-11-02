@@ -13,10 +13,10 @@ namespace MVC_Lesson2.Areas.Default.Controllers
 {
     public class UserController : BaseController
     {
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var users = Repository.Users.ToList();
-            return View(users);
+            var data = new PageableData<User>(Repository.Users, page, 30);
+            return View(data);
         }
         [HttpGet]
         public ActionResult Register()
