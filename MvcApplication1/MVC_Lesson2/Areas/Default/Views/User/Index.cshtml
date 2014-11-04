@@ -3,9 +3,16 @@
 @{
     ViewBag.Title = "Users";
     Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var searchString = (string)ViewBag.Search;
 }
 
 <h2>Users</h2>
+
+@using (Html.BeginForm("Index", "User", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.TextBox("searchString", searchString ?? "", new { @class = "input-medium search-query" })
+    <button type="submit" class="btn">Поиск</button>
+}
 
 <p>
     @foreach (var user in Model.List)
@@ -23,6 +30,6 @@
         </div>
     }
         <div>
-            @Html.PageLinks(Model.PageNo, Model.CountPage, x => Url.Action("Index", new { page = x }))
+            @Html.PageLinks(Model.PageNo, Model.CountPage, x => Url.Action("Index", new { page = x, searchString }))
         </div>
 </p>
