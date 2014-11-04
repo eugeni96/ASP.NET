@@ -20,6 +20,20 @@ namespace MVC_Lesson2.Areas.Default
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "MVC_Lesson2.Areas.Default.Controllers" }
             );
+
+            context.MapRoute(
+                null,
+                url: "Error",
+                defaults: new { controller = "Error", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MVC_Lesson2.Areas.Default.Controllers" }
+            );
+
+            context.MapRoute(
+                null,
+                url: "NotFoundPage",
+                defaults: new { controller = "Error", action = "NotFoundPage", id = UrlParameter.Optional },
+                namespaces: new[] { "MVC_Lesson2.Areas.Default.Controllers" }
+            );
         }
     }
 }

@@ -153,9 +153,10 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Default\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Default\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Default\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Default\Controllers\LoginController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
-    <Compile Include="Areas\Default\Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
     <Compile Include="Areas\Default\Controllers\RoleController.cs" />
     <Compile Include="Areas\Default\Controllers\UserController.cs" />
@@ -213,6 +214,8 @@
     <Content Include="Areas\Default\Views\Shared\_Ok.cshtml" />
     <Content Include="Areas\Default\Views\Customer\Edit.cshtml" />
     <Content Include="Areas\Default\Views\Customer\OwnershipItem.cshtml" />
+    <Content Include="Areas\Default\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Error\NotFoundPage.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\default\customer-edit.js" />
@@ -249,7 +252,6 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Default\Models\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

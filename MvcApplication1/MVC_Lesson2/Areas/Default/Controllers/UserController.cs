@@ -78,7 +78,21 @@ namespace MVC_Lesson2.Areas.Default.Controllers
             return null;
         }
 
-
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            var user = Repository.Users.FirstOrDefault(p => p.ID == id);
+            if (user != null)
+            {
+                if (CurrentUser.InRoles("admin") || CurrentUser.ID == id)
+                {
+                    //Разрешено редактирование
+                    return View(user);
+                }
+                return RedirectToLoginPage;
+            }
+            return RedirectToNotFoundPage;
+        }
 
     }
 }
