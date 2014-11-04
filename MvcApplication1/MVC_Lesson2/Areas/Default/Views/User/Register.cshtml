@@ -13,69 +13,79 @@
 @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
-        <div class="control-group">
-            <label class="control-label" for="Email">
-                Email
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("Email")
-                @Html.TextBox("Email", (string)Model.Email)
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="Email">
+                    Email
+                </label>
+                <div class="col-sm-3">
+                    @Html.ValidationMessage("Email")
+                    @Html.TextBox("Email", (string)Model.Email, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="FirstName">
-                Password
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("Password")
-                @Html.Password("Password", (string)Model.Password)
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="FirstName">
+                    Password
+                </label>
+                <div class="col-sm-3">
+                    @Html.ValidationMessage("Password")
+                    @Html.Password("Password", (string)Model.Password, new { @class = "form-control" })
+                </div>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="FirstName">
-                Confirm Password
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("ConfirmPassword")
-                @Html.Password("ConfirmPassword", (string)Model.ConfirmPassword)
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="FirstName">
+                    Confirm Password
+                </label>
+                <div class="col-sm-3">
+                    @Html.ValidationMessage("ConfirmPassword")
+                    @Html.Password("ConfirmPassword", (string)Model.ConfirmPassword, new { @class = "form-control col-sm-10" })
+                </div>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="FirstName">
-                Captcha
-            </label>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="FirstName">
-                <img src="@Url.Action("Captcha", "User")" alt="captcha" />
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("Captcha")
-                @Html.TextBox("Captcha", (string)Model.Captcha)
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="FirstName">
+                    Captcha
+                </label>
             </div>
-        </div>
-        
-        <div class="control-group">
-            <label class="control-label" for="FirstName">
-                Birth date
-            </label>
-            <div class="controls">
-                @Html.ValidationMessage("BirthDay")
-                @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList, new { @class = "select-day" })
-                @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList, new { @class = "select-month" })
-                @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList, new { @class = "select-year" })
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="FirstName">
+                    <img src="@Url.Action("Captcha", "User")" alt="captcha" />
+                </label>
+                <div class="col-sm-3">
+                    @Html.ValidationMessage("Captcha")
+                    @Html.TextBox("Captcha", (string)Model.Captcha, new { @class = "form-control col-sm-10" })
+                </div>
             </div>
-        </div>
-        
 
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">
-                Register
-            </button>
-            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
-        </div>
-        
+            <div class="form-group">  
+                <label class="col-sm-2 control-label" for="FirstName">
+                    Birth date
+                </label>
+                <div class="col-sm-10">
+                    <div class="row">
+                        @Html.ValidationMessage("BirthDay")
+                        <div class="col-sm-1">
+                            @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-2">
+                            @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-1">
+                            @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-    </fieldset>
+            <div class="col-sm-offset-2 col-sm-3">
+                <button type="submit" class="btn btn-primary">
+                    Register
+                </button>
+                @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+            </div>
+        </form>
+
+
+
+</fieldset>
 }
