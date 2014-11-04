@@ -22,7 +22,7 @@
             </span>
         </div>
     }
-    <div class="pagination">
-        @Html.PageLinks(Model.PageNo, Model.CountPage, x => Url.Action("Index", new { page = x }))
-    </div>
+        <div>
+            @Html.PageLinks(Model.PageNo, Model.CountPage, x => Url.Action("Index", new { page = x }))
+        </div>
 </p>
