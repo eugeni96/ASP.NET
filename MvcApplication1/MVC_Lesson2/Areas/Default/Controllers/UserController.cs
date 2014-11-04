@@ -4,6 +4,7 @@ using MVC_Lesson2.Controllers;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using MVC_Lesson2.Global;
 using MVC_Lesson2.Models.Info;
 using MVC_Lesson2.Models.ViewModels;
 using MVC_Lesson2.Tools;
@@ -12,10 +13,20 @@ namespace MVC_Lesson2.Areas.Default.Controllers
 {
     public class UserController : BaseController
     {
-        public ActionResult Index(int page = 1)
+        public ActionResult Index(int page = 1, string searchString = null)
         {
-            var data = new PageableData<User>(Repository.Users, page, 3);
-            return View(data);
+            ViewBag.Search = searchString;
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                var list = SearchEngine.Search(searchString, Repository.Users).AsQueryable();
+                var data = new PageableData<User>(list, page, 5);
+                return View(data);
+            }
+            else
+            {
+                var data = new PageableData<User>(Repository.Users, page, 5);
+                return View(data);
+            }
         }
         [HttpGet]
         public ActionResult Register()
