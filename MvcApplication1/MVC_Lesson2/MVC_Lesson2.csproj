@@ -63,6 +63,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -154,6 +155,7 @@
     <Compile Include="Areas\Default\Controllers\CustomerController.cs" />
     <Compile Include="Areas\Default\Controllers\DefaultController.cs" />
     <Compile Include="Areas\Default\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Default\Controllers\FeedController.cs" />
     <Compile Include="Areas\Default\Controllers\LoginController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -169,6 +171,7 @@
     <Compile Include="Global\Auth\IUserProvider.cs" />
     <Compile Include="Global\Auth\UserIndentity.cs" />
     <Compile Include="Global\Auth\UserProvider.cs" />
+    <Compile Include="Global\RssActionResult.cs" />
     <Compile Include="Global\SearchEngine.cs" />
     <Compile Include="Helper\PageHelper.cs" />
     <Compile Include="Mappers\CommonMapper.cs" />
