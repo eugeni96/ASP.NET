@@ -1,4 +1,5 @@
 ﻿using MVC_Lesson2.Global.Auth;
+using MVC_Lesson2.Global.Config;
 using MVC_Lesson2.Mappers;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(MVC_Lesson2.App_Start.NinjectWebCommon), "Start")]
@@ -50,6 +51,7 @@ namespace MVC_Lesson2.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 kernel.Bind<IMapper>().To<CommonMapper>().InSingletonScope();
+                kernel.Bind<IConfig>().To<Config>().InSingletonScope();
 
                 RegisterServices(kernel);
                 return kernel;

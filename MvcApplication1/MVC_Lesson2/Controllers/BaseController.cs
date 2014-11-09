@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using LessonProject.Model;
 using MVC_Lesson2.Global.Auth;
+using MVC_Lesson2.Global.Config;
 using MVC_Lesson2.Mappers;
 using Ninject;
 
@@ -24,6 +27,10 @@ namespace MVC_Lesson2.Controllers
 
         [Inject]
         public IAuthentication Auth { get; set; }
+
+        [Inject]
+        public IConfig Config { get; set; }
+
         public User CurrentUser
         {
             get
@@ -52,6 +59,23 @@ namespace MVC_Lesson2.Controllers
             base.OnException(filterContext);
 
             filterContext.Result = Redirect(ErrorPage);
+        }
+
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            try
+            {
+                var cultureInfo = new CultureInfo(Config.Lang);
+
+                Thread.CurrentThread.CurrentCulture = cultureInfo;
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            }
+            catch (Exception ex)
+            {
+                //logger.Error("Culture not found", ex);
+            }
+
+            base.Initialize(requestContext);
         }
     }
 }

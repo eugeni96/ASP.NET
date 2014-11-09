@@ -171,6 +171,8 @@
     <Compile Include="Global\Auth\IUserProvider.cs" />
     <Compile Include="Global\Auth\UserIndentity.cs" />
     <Compile Include="Global\Auth\UserProvider.cs" />
+    <Compile Include="Global\Config\Config.cs" />
+    <Compile Include="Global\Config\IConfig.cs" />
     <Compile Include="Global\RssActionResult.cs" />
     <Compile Include="Global\SearchEngine.cs" />
     <Compile Include="Helper\PageHelper.cs" />
