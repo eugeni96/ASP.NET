@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActionMailer.Net">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ActionMailer.Net.Mvc">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.2.1\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -157,6 +163,7 @@
     <Compile Include="Areas\Default\Controllers\ErrorController.cs" />
     <Compile Include="Areas\Default\Controllers\FeedController.cs" />
     <Compile Include="Areas\Default\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Default\Controllers\MailController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
@@ -176,6 +183,7 @@
     <Compile Include="Global\RssActionResult.cs" />
     <Compile Include="Global\SearchEngine.cs" />
     <Compile Include="Helper\PageHelper.cs" />
+    <Compile Include="Mail\Gmailer.cs" />
     <Compile Include="Mappers\CommonMapper.cs" />
     <Compile Include="Mappers\IMapper.cs" />
     <Compile Include="Models\Info\Customer.cs" />
@@ -221,6 +229,7 @@
     <Content Include="Areas\Default\Views\Customer\OwnershipItem.cshtml" />
     <Content Include="Areas\Default\Views\Error\Index.cshtml" />
     <Content Include="Areas\Default\Views\Error\NotFoundPage.cshtml" />
+    <Content Include="Areas\Default\Views\Mail\Subscription.html.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\default\customer-edit.js" />

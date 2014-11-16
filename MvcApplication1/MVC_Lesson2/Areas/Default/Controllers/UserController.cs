@@ -1,10 +1,12 @@
 ﻿using System.Drawing.Imaging;
+using System.IO;
 using LessonProject.Model;
 using MVC_Lesson2.Controllers;
 using System;
 using System.Linq;
 using System.Web.Mvc;
 using MVC_Lesson2.Global;
+using MVC_Lesson2.Mail;
 using MVC_Lesson2.Models.Info;
 using MVC_Lesson2.Models.ViewModels;
 using MVC_Lesson2.Tools;
@@ -94,5 +96,13 @@ namespace MVC_Lesson2.Areas.Default.Controllers
             return RedirectToNotFoundPage;
         }
 
+        public ActionResult SubscriptionTest()
+        {
+            var mailController = new MailController();
+
+            var email = mailController.Subscription("Привет, мир!", CurrentUser.Email);
+            email.Deliver();
+            return Content("OK");
+        }
     }
 }
